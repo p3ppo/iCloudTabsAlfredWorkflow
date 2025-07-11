@@ -45,8 +45,10 @@ for device_uuid in cloud_tab_devices_uuid_list:
 	all_device_tabs.append([lookup_name, device_tabs])
 
 # Output path with safe filename format
+file_path = os.getenv('MY_FILE_PATH')
+file_name = os.getenv('MY_FILE_NAME')
 outfile = os.path.expanduser(
-	f'~/Desktop/alltabs_{datetime.now().strftime("%Y-%m-%d %H.%M.%S")}.md'
+	f'{file_path}/{file_name}_{datetime.now().strftime("%Y-%m-%d %H.%M.%S")}.md'
 )
 
 outtext = f'''
